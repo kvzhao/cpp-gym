@@ -15,3 +15,5 @@ foreach(FILE ${ALL_CPP_FILES})
     # target_link_libraries(${FILENAME} ${OpenCV_LIBS})
 endforeach()
 
+# copy test data
+file(COPY ${CMAKE_SOURCE_DIR}/data DESTINATION ${CMAKE_BINARY_DIR})
