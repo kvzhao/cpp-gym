@@ -29,7 +29,9 @@ bool IsPermutation(const std::string &str1, const std::string &str2) {
 
 TEST(TEST_POSITIVE_CASE, IsPermutation) {
   ASSERT_TRUE(IsPermutation("abc", "cab"));
+  ASSERT_TRUE(IsPermutation("god", "dog"));
   ASSERT_TRUE(IsPermutation("god", "     dog"));
+  ASSERT_TRUE(IsPermutation("g     od", "     d  o    g"));
   ASSERT_TRUE(IsPermutation("aaaaa", "aaaaa"));
 }
 
@@ -38,6 +40,7 @@ TEST(TEST_NEGATIVE_CASE, IsPermutation) {
   ASSERT_FALSE(IsPermutation("1233", "abe"));
   ASSERT_FALSE(IsPermutation("111", "abe"));
   ASSERT_FALSE(IsPermutation("111", "aaa"));
+  ASSERT_FALSE(IsPermutation("   od", "   oo"));
 }
 
 int main(int argc, char **argv) {
