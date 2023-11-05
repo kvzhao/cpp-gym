@@ -22,10 +22,7 @@ include(GoogleTest)
 foreach(FILE ${ALL_CPP_FILES})
     get_filename_component(FILENAME ${FILE} NAME_WE)
     add_executable(${FILENAME} ${FILE})
-
     target_link_libraries(${FILENAME} gtest)
-    #add_test(NAME test_${FILENAME} COMMAND ${FILENAME})
-    gtest_discover_tests(${FILENAME})
 endforeach()
 
 
